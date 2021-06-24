@@ -1,0 +1,121 @@
+いもす法
+    複数の不等式があるとき，共通部分を考える
+
+ビット演算
+    https://atcoder.jp/contests/apg4b/tasks/APG4b_ac
+
+2進数をつくる
+    10進数mをn桁（先頭0を許す）の2進数で表す。ただしnは変数ではなく定数。
+        bitset<n> b(m)
+
+
+多重ループを含む愚直解を避ける
+    累積和
+        配列Aの第p項から第q項の和は，配列Aの累積和配列Sを用意して
+        S[q]-S[p-1]
+        で求めればよい
+    最小値（最大値）の更新
+        以下をREPすればいい:
+        minの初期値を設定
+        新たに取得した値aとminを比較
+        if文でminの方が小さければスルー，aの方が小さければmin=aとする
+        ※countの場合はcount=0してからroopさせる
+
+文字列の扱い
+    char*とstringの違い
+        char*はasciiコードで文字を扱う。''シングルクォートで囲む。結合させる時は注意。
+        charの文字コード表　http://www3.nit.ac.jp/~tamura/ex2/ascii.html
+        数字0は48，アルファベット大文字Aは65，アルファベット小文字aは97
+        stringは””ダブルクォートで囲む。
+    長さ取得
+        str.length()
+    char->intの型変換
+        char c = '1' //内部的には49
+        int i = c - '0' //'0'は内部的には48なのでi=1となる
+    int->stringの型変換
+        to_string(num)
+    string->intの型変換
+        stoi(str)
+    string->longlongの型変換
+        stoll(str)
+
+配列の扱い
+    重複を消す
+        include <algorithm>
+        sortする
+        uniqueで隣接した重複要素を消す（このときsizeは変わらず，ゴミが残る。ポインタは最後の要素を指す。）
+        eraseでゴミを消す
+
+
+
+小数の桁数
+
+    coutの際の桁数を操作する
+        iomanipをインクルードしてsetprecisionを使う
+        cout << fixed << setprecision(小数点以下の桁数) << 出力したい変数
+
+素数判定
+    nが素数が判定するとき，sqrt(n)以下の数で割り切れるか考えれば良い
+    2未満だったらfalse
+    2だったらtrue
+    2の倍数だったらfalse
+    3<=i<=sqrt(n)のiに対して割り切れたらfalse
+    以上どれにも当てはまらなければtrue
+
+
+最大公約数
+    c++17以降ではgcdでOK
+    再帰関数を作る
+        a mod b=0ならbを返す。違うならbとa%bに対して同じ操作をする。
+最小公倍数
+    c++17以降ならlcmでOK
+    lcm*gcd=a*bを使う
+
+幅優先探索
+
+深度優先探索
+    
+
+辞書順
+    ライブラリ<algorithm>のnext_permutationを使う
+
+二分探索法
+    min<=x<=maxを満たすことがわかっているxの値を求めたいときに使う。
+        (max-min)/2^n <= 1を満たすnを求める
+        以下をn回繰り返す;
+            mid=(min+max)/2を定義
+            min<=x<=midならmax=midとする。そうでないならmin=midとする。
+        以上。
+        この時点でmax-min<=1
+        maxが条件を満たすならx=max, そうでないならx=min
+
+
+桁数
+    longlong
+        -9,223,372,036,854,775,808 から 9,223,372,036,854,775,807
+        -10^19<longlong<10^19
+    int
+        -2147483648～2147483647
+        10^9
+
+map関数
+    insert
+    find
+    at
+
+行列の扱い
+    周りに空白を設けると処理単純になる
+
+テキストファイルから入力を受け取る
+    #include <fstream>
+    ifstream in("絶対パス");
+    cin.rdbuf(in.rdbuf());
+
+n進数に変換
+    8進数oct, 16進数hex
+    std::stringstream ss;
+    ss << std::oct << 9;
+    std::string s = ss.str(); // "11"
+
+deque
+    前後ともpush,popが可能なqueue

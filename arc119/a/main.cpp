@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define REP(i, n) for(int i = 0; i < n; i++)
+#define FOR(i, m, n) for(int i = m; i < n; i++)
+#define ALL(x) (x).begin(),(x).end()
+#define SIZE(x) ((ll)(x).size())
+#define MAX(x) *max_element(ALL(x))
+#define MIN(x) *min_element(ALL(x))
+#define INF 1e15
+typedef long long ll;
+typedef long double ld;
+
+int main(){
+  ll n;
+  cin>>n;
+  ll a, b = 0, c, min = INF, sum;
+  ll bpow = 1;
+  while(n >= bpow){
+    a = n / bpow;
+    c = n - a * bpow;
+    sum = a + b + c;
+    if(min > sum)min = sum;
+    b++;
+    bpow *= 2;
+  }
+  cout<< min <<endl;
+  return 0;
+}

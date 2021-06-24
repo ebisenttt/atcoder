@@ -1,0 +1,50 @@
+{
+  "contest": {
+    "id": "joi2010yo",
+    "title": "第９回日本情報オリンピック 予選（オンライン）",
+    "url": "https://atcoder.jp/contests/joi2010yo"
+  },
+  "tasks": [
+    {
+      "id": "joi2010yo_a",
+      "label": "A",
+      "title": "レシート",
+      "url": "https://atcoder.jp/contests/joi2010yo/tasks/joi2010yo_a"
+    },
+    {
+      "id": "joi2010yo_b",
+      "label": "B",
+      "title": "すごろく",
+      "url": "https://atcoder.jp/contests/joi2010yo/tasks/joi2010yo_b"
+    },
+    {
+      "id": "joi2010yo_c",
+      "label": "C",
+      "title": "パーティー",
+      "url": "https://atcoder.jp/contests/joi2010yo/tasks/joi2010yo_c"
+    },
+    {
+      "id": "joi2010yo_d",
+      "label": "D",
+      "title": "カード並べ",
+      "url": "https://atcoder.jp/contests/joi2010yo/tasks/joi2010yo_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "joi2010yo_e",
+      "label": "E",
+      "title": "通勤経路",
+      "url": "https://atcoder.jp/contests/joi2010yo/tasks/joi2010yo_e"
+    },
+    {
+      "id": "joi2010yo_f",
+      "label": "F",
+      "title": "方向音痴のトナカイ",
+      "url": "https://atcoder.jp/contests/joi2010yo/tasks/joi2010yo_f"
+    }
+  ]
+}

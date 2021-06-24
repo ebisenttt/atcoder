@@ -1,0 +1,38 @@
+{
+  "contest": {
+    "id": "arc101",
+    "title": "AtCoder Regular Contest 101",
+    "url": "https://atcoder.jp/contests/arc101"
+  },
+  "tasks": [
+    {
+      "id": "arc101_a",
+      "label": "C",
+      "title": "Candles",
+      "url": "https://atcoder.jp/contests/arc101/tasks/arc101_a",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "arc101_b",
+      "label": "D",
+      "title": "Median of Medians",
+      "url": "https://atcoder.jp/contests/arc101/tasks/arc101_b"
+    },
+    {
+      "id": "arc101_c",
+      "label": "E",
+      "title": "Ribbons on Tree",
+      "url": "https://atcoder.jp/contests/arc101/tasks/arc101_c"
+    },
+    {
+      "id": "arc101_d",
+      "label": "F",
+      "title": "Robots and Exits",
+      "url": "https://atcoder.jp/contests/arc101/tasks/arc101_d"
+    }
+  ]
+}
