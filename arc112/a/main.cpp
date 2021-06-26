@@ -11,6 +11,18 @@ typedef long long ll;
 typedef long double ld;
 
 int main(){
-  
+  ll t;
+  cin >> t;
+  REP(i,t){
+    ll l, r;
+    cin >> l >> r;
+    ll cnt = 0;
+    ll dif = r - l;
+    while(dif > 0){
+      cnt += (r - l) - dif + 1;
+      dif--;
+    }
+    cout << cnt << endl;
+  }
   return 0;
 }
