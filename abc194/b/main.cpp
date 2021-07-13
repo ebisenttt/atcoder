@@ -13,12 +13,22 @@ typedef long double ld;
 int main(){
   int n;
   cin >> n;
-  vector<int> a(n), b(n), sum(n);
+  vector<pair<ll,ll>> a(n), b(n);
   REP(i,n){
-    cin >> a[i] >> b[i];
-    sum[i] = a[i] + b[i];
+    cin >> a[i].first;
+    a[i].second = i;
+    cin >> b[i].first;
+    b[i].second = i;
   }
-  int ans;
-  
+  sort(ALL(a));
+  sort(ALL(b));
+  ll ans;
+  if(a[0].second == b[0].second){
+    vector<ll> v = {a[0].first + b[0].first, max(a[0].first, b[1].first), max(a[1].first, b[0].first)};
+    ans = MIN(v);
+  }else{
+    ans = max(a[0].first, b[0].first);
+  }
+  cout << ans << endl;
   return 0;
 }

@@ -17,10 +17,10 @@ int main(){
     ll n;
     cin >> n;
     string ans;
-    if(n == 2)ans = "Same";
-    else if(n % 2)ans = "Odd";
+    if(n % 2)ans = "Odd";
+    else if(n % 4)ans = "Same";
     else ans = "Even";
-    cout << ans << endl;
+    cout << ans << endl; 
   }
   return 0;
 }

@@ -43,11 +43,9 @@ if [ -d $contest ]; then
   echo $contest "exists"
 else
   echo $contest "doesn't exist"
+  acc new --force $contest
 fi
-
-acc new --force $contest
 
 #open a file on vscode
 cd $ATCODER/$contest
-
 code -g ./$problem/main.cpp:14:3

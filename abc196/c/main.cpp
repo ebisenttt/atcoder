@@ -22,10 +22,7 @@ int main(){
   ll ans = 0;
   if(digit % 2){
     digit /= 2;
-    while(digit >= 0){
-      ans += pow(10, digit + 1) - 1;
-      digit--;
-    }
+    ans = pow(10, digit) - 1;
   }else{
     digit /= 2;
     ll q = n / pow(10, digit);

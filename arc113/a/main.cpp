@@ -14,10 +14,12 @@ int main(){
   ll k;
   cin >> k;
   ll cnt = 0;
-  FOR(a,1,k+1){
-    FOR(b,a,k+1){
-      int c = k / a / b;
-      cnt += c;
+  FOR(a,1,cbrt(k)+1){
+    FOR(b,a,k/a + 1){
+      ll c = k / a / b;
+      if(c < b)continue;
+      if(a == b)cnt += 3 * (c - b) + 1;
+      else cnt += 6 * (c - b) + 3;
     }
   }
   cout << cnt << endl;

@@ -16,11 +16,12 @@ int main(){
   REP(i,t){
     ll l, r;
     cin >> l >> r;
-    ll cnt = 0;
     ll dif = r - l;
-    while(dif > 0){
-      cnt += (r - l) - dif + 1;
-      dif--;
+    ll cnt;
+    if(l > dif)cnt = 0;
+    else {
+      cnt = (dif + 1) * (dif + 1) - dif * (dif + 1) / 2;
+      if(l > 0)cnt -= (dif + 1) * l - (l - 1) * l / 2;
     }
     cout << cnt << endl;
   }

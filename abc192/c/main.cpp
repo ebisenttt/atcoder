@@ -10,17 +10,54 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
+int vcheck(vector<int> v);
+
 int main(){
   string n;
   ll k;
   cin >> n >> k;
-  while(k > 0){
-    sort(ALL(n), greater());
-    string g1 = n;
-    sort(ALL(n));
-    while(n[0] == '0')n = n.substr(1);
-    string g2 = n;
-    
+  int len = n.size();
+  vector<int> num(len);
+  REP(i,len){
+    num[len - i - 1] = n[i] - '0';
   }
+  while(k > 0){
+    sort(ALL(num));
+    vector<int> g1 = num;
+    //
+    // cout<<"g1: ";
+    // vcheck(g1);
+    sort(ALL(num), greater());
+    vector<int> g2 = num;
+    //
+    // cout<<"g2: ";
+    // vcheck(g2);
+    vector<int> ans(num.size());
+    REP(i,g1.size()){
+      ans[i] += g1[i] - g2[i];
+      if(ans[i] < 0){
+        ans[i+1]--;
+        ans[i] += 10;
+      }
+    }
+    //
+    // cout<<"ans: ";
+    // vcheck(ans);
+    num = ans;
+    while(num.back() == 0 && num.size() > 1)num.pop_back();
+    k--;
+  }
+  for(int i = num.size() - 1; i >= 0; i--){
+    cout<<num[i];
+  }
+  cout<<endl;
+  return 0;
+}
+
+int vcheck(vector<int> v){
+  for(int i = v.size() - 1; i >= 0; i--){
+    cout<<v[i];
+  }
+  cout<<endl;
   return 0;
 }

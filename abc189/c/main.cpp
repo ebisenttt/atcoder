@@ -11,6 +11,19 @@ typedef long long ll;
 typedef long double ld;
 
 int main(){
-  
+  ll n;
+  cin >> n;
+  vector<ll> v(n);
+  REP(i,n)cin>>v[i];
+  ll M = 0;
+  REP(i,n){
+    ll m = v[i];
+    FOR(j,i,n){
+      m = min(m, v[j]);
+      ll sum = m * (j - i + 1);
+      M = max(M, sum);
+    }
+  }
+  cout << M << endl;
   return 0;
 }

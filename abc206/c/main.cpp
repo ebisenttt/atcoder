@@ -13,17 +13,19 @@ typedef long double ld;
 int main(){
   int n;
   cin>>n;
-  map<int,int> mp;
+  map<ll, ll> mp;
+  ll cnt = 0;
   REP(i,n){
-    int num;
-    cin>>num;
-    if(mp.count(num)>0)mp.at(num)++;
-    else mp.insert(make_pair(num,1));
+    ll a;
+    cin >> a;
+    if(mp.count(a) > 0){
+      cnt += i - mp.at(a);
+      mp.at(a)++;
+    }else{
+      cnt += i;
+      mp.insert({a, 1});
+    }
   }
-  int ans = n * (n - 1) / 2;
-  for(auto p: mp){
-    ans -= p.second * (p.second - 1) / 2;
-  }
-  cout<<ans<<endl;
+  cout << cnt << endl;
   return 0;
 }

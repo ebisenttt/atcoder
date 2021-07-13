@@ -11,6 +11,32 @@ typedef long long ll;
 typedef long double ld;
 
 int main(){
-  
+  ll n, q;
+  string s;
+  cin >> n >> s >> q;
+  bool flag = false;
+  REP(i,q){
+    ll t, a, b;
+    cin >> t >> a >> b;
+    t--;
+    a--;
+    b--;
+    if(t)flag = !flag;
+    else {
+      if(flag){
+        if(a >= n)a = a - n;
+        else a = a + n;
+        if(b >= n)b = b - n;
+        else b = b + n;
+      }
+      swap(s[a], s[b]);
+    }
+  }
+  if(flag){
+    string l = s.substr(0, n);
+    string r = s.substr(n);
+    s = r + l;
+  }
+  cout << s << endl;
   return 0;
 }

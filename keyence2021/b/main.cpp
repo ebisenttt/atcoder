@@ -11,6 +11,20 @@ typedef long long ll;
 typedef long double ld;
 
 int main(){
-  
+  ll n, k;
+  cin >> n >> k;
+  vector<ll> v(n);
+  REP(i,n)cin>>v[i];
+  sort(ALL(v));
+  vector<ll> box(k, -1);
+  ll num = 0;
+  REP(i,n){
+    if(box[num] == v[i] - 1)box[num] = v[i];
+    num++;
+    if(i != n - 1 && v[i+1] != v[i])num = 0;
+  }
+  ll cnt = 0;
+  REP(i,k)cnt += box[i] + 1;
+  cout << cnt << endl;
   return 0;
 }

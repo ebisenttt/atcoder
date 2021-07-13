@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <atcoder/all>
 using namespace std;
 #define REP(i, n) for(int i = 0; i < n; i++)
 #define FOR(i, m, n) for(int i = m; i < n; i++)
@@ -10,31 +11,21 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
-struct UnionFind{
-  vector<ll> par;
+using namespace atcoder;
 
-  UnionFind(ll n): par(n){
-    REP(i,n)par[i]=i;
-  }
+int main() {
+  ll n, m;
+  cin >> n >> m;
+  dsu graph(n);
 
-  ll root(ll x){
-    if(x==par[x])return x;
-    return par[x]=root(par[x]);
-  }
-
-  ll unite(ll x,ll y){
-    ll rx=root(x);
-    ll ry=root(y);
-    if(rx==ry)return;
-    par[rx]=ry;
-  }
-};
-
-int main(){
-  ll n,m;
-  cin>>n>>m;
   REP(i,m){
-    
+    ll a,b;
+    cin >> a >> b;
+    a--;
+    b--;
+    graph.merge(a,b);
   }
+
+  cout << graph.groups().size() - 1 << endl;
   return 0;
 }

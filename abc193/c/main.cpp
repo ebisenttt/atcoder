@@ -11,6 +11,19 @@ typedef long long ll;
 typedef long double ld;
 
 int main(){
-  
+  ll n;
+  cin >> n;
+  ll a = 2;
+  ll b = 2;
+  set<ll> s;
+  while(n >= pow(a,b)){
+    while(n >= pow(a,b)){
+      s.insert(pow(a,b));
+      b++;
+    }
+    a++;
+    b = 2;
+  }
+  cout << n - s.size() << endl;
   return 0;
 }

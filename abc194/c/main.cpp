@@ -11,6 +11,14 @@ typedef long long ll;
 typedef long double ld;
 
 int main(){
-  
+  ll n;
+  cin >> n;
+  vector<ll> v(n);
+  REP(i,n)cin>>v[i];
+  ll sum = 0;
+  ll dsum = 0;
+  REP(i,n)sum+=v[i];
+  REP(i,n)dsum+=v[i]*v[i];
+  cout << n * dsum - sum * sum << endl;
   return 0;
 }

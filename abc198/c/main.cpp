@@ -11,6 +11,14 @@ typedef long long ll;
 typedef long double ld;
 
 int main(){
-  
+  ll r, x, y;
+  cin >> r >> x >> y;
+  ld d = sqrt(x * x + y * y);
+  if(r == d)cout << 1 << endl;
+  else if(d <= 2 * r)cout << 2 << endl;
+  else{
+    ll q = ceil(d / r);
+    cout << q << endl;
+  }
   return 0;
 }

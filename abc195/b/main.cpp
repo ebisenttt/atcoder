@@ -11,6 +11,14 @@ typedef long long ll;
 typedef long double ld;
 
 int main(){
-  
+  ll a,b,w;
+  cin >> a >> b >> w;
+  w *= 1000;
+  vector<ll> v;
+  FOR(i, w/b, w/a + 1){
+    if(a * i <= w && w <= b * i)v.push_back(i);
+  }
+  if(v.size() == 0)cout<<"UNSATISFIABLE"<<endl;
+  else cout << v[0] << " " << v[v.size() - 1] << endl;
   return 0;
 }

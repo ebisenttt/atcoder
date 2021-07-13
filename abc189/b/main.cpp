@@ -11,6 +11,19 @@ typedef long long ll;
 typedef long double ld;
 
 int main(){
-  
+  ll n, x;
+  cin >> n >> x;
+  x *= 100;
+  ll alc = 0;
+  REP(i,n){
+    ll v, p;
+    cin >> v >> p;
+    alc += v * p;
+    if(alc > x){
+      cout << i + 1 << endl;
+      return 0;
+    }
+  }
+  cout << -1 << endl;
   return 0;
 }

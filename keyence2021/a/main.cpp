@@ -12,9 +12,15 @@ typedef long double ld;
 
 int main(){
   ll n;cin>>n;
-  vector<ll> a(n), b(n);
+  vector<ll> a(n), b(n), c(n);
   REP(i,n)cin>>a[i];
   REP(i,n)cin>>b[i];
-  
+  ll pM = 1;
+  ll aM = 1;
+  REP(i,n){
+    aM = max(aM, a[i]);
+    pM = max(pM, max(aM * b[i], a[i] * b[i]));
+    cout << pM << endl;
+  }
   return 0;
 }

@@ -11,10 +11,11 @@ typedef long long ll;
 typedef long double ld;
 
 int main(){
-  int x,y,z;
+  double x,y,z;
   cin>>x>>y>>z;
-  int ans = z * y / x;
-  if(y % x == 0)ans--;
+  ll ans = 1;
+  while(y * z > ans * x)ans++;
+  if(y * z <= ans * x)ans--;
   cout << ans << endl;
   return 0;
 }
