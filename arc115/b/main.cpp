@@ -47,13 +47,30 @@ int main(){
   cin >> n;
   vector<vector<ll>> v(n, vector<ll> (n));
   REP(i,n)REP(j,n)cin>>v[i][j];
-  if(!checkCol(v) || checkRow(v)){
-    cout << "No" << endl;
-  }else{
-    vector<ll> a(n), b(n);
-    REP(i,n-1){
-      a[i] = v[i][0] - v[i]
+  vector<ll> a(n), b(n);
+  ll m = INF;
+  REP(i,n) m = min(m, v[i][0]);
+  REP(i,n) a[i] = v[i][0] - m;
+  REP(i,n) b[i] = v[0][i] - a[0];
+  REP(i,n){
+    REP(j,n){
+      if(a[i] + b[j] == v[i][j])continue;
+      else{
+        cout << "No" << endl;
+        return 0;
+      }
     }
+  }
+  cout << "Yes" << endl;
+  REP(i,n){
+    cout << a[i];
+    if(i == n - 1)cout << endl;
+    else cout << " ";
+  }
+  REP(i,n){
+    cout << b[i];
+    if(i == n - 1)cout << endl;
+    else cout << " ";
   }
   return 0;
 }

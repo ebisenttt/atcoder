@@ -11,6 +11,16 @@ typedef long long ll;
 typedef long double ld;
 
 int main(){
-  
+  ll n, m;
+  cin >> n >> m;
+  ll odd = 0, even = 0;
+  REP(i,n){
+    bitset<20> bit;
+    cin >> bit;
+    ll cnt = bit.count();
+    if(cnt % 2) odd++;
+    else even++;
+  }
+  cout << even * odd << endl;
   return 0;
 }
